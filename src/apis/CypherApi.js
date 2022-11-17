@@ -24,9 +24,9 @@ const CypherApi = {
             .catch( (error) => { console.log(error) } ) // if fails go here (400/500 response)
 
     },
-    getOneCypher: (setOneCypher) => {
+    getOneCypher: (setOneCypher, id) => {
         // fetch( URI ) => retrieving the data
-        fetch( URI + `${2}` )
+        fetch( URI + `${id}` )
             .then( (result) => {        // go here if successful (200 response)
                 
                 console.log("RESULT:")
