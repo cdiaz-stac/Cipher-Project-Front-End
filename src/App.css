@@ -1,0 +1,45 @@
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 6rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.footertext {
+  font-weight: bold;
+}
+
+.card-btn {
+  margin: 0.2rem;
+}
+
+.student-img {
+  width: 100%;
+}
+
+.card {
+  width: 25vw;
+  margin: 0.5rem;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
