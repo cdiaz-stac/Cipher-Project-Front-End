@@ -8,12 +8,11 @@ import {
   Link,
 } from "react-router-dom";
 
-const CyphersTable = () => {
+const CyphersTable = (props) => {
 
     // hold empty array for the products that need to be loaded on the page,
     // will call an API to load the data into products in the useEffect hook
     const[ cyphers, setCyphers] =  useState([])
-
     // useEffect( function, [] ) => function gets executed when component gets mounted
     useEffect( () => {
         console.log("Hello, this component was mounted!")
@@ -28,7 +27,7 @@ const CyphersTable = () => {
             <td>{p.question}</td>
             <td>{p.difficulty}</td>
             <td><Link to={'/cyphers/'+ p.id}>
-                <button className='btn btn-danger'>
+                <button onClick={()=>{props.setId(p.id)}} className='btn btn-danger'>
                     Attempt
                 </button>
                 </Link>
