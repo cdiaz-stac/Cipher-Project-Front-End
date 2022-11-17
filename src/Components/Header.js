@@ -7,7 +7,7 @@ const Header = () => {
       <h1 className="display-2">Ciphers Website</h1>
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           Home <span class="sr-only">(current)</span>
         </a>
         <button
@@ -24,24 +24,24 @@ const Header = () => {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to='/cyphers'>
                 Play Ciphers
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/cyphers:id">
                 Login
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/register">
                 Register User
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link class="nav-link" to="/progress">
                 View Progress
-              </a>
+              </Link>
             </li>
           </ul>
           {/* <span class="navbar-text">Navbar text with an inline element</span> */}
