@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import CypherApi from '../apis/CypherApi';
 
-const CyphersSingle = () => {
+const CyphersSingle = (props) => {
 
     // hold empty array for the products that need to be loaded on the page,
     // will call an API to load the data into products in the useEffect hook
@@ -18,7 +18,7 @@ const CyphersSingle = () => {
     useEffect( () => {
         console.log("Hello, this component was mounted!")
 
-        CypherApi.getOneCypher(setOneCypher)
+        CypherApi.getOneCypher(setOneCypher, props.id)
 
     }, [] )
 
