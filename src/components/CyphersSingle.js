@@ -1,44 +1,41 @@
-import { useEffect, useState } from 'react';
-import CypherApi from '../apis/CypherApi';
-import * as React from "react";
+import React, { useEffect, useState } from 'react';
+
 import {
   BrowserRouter as Router,
+  Link,
   Route,
   Routes,
-  Link,
+  useParams,
 } from "react-router-dom";
+import CypherApi from '../apis/CypherApi';
 
-const CyphersTable = () => {
+const CyphersSingle = () => {
 
     // hold empty array for the products that need to be loaded on the page,
     // will call an API to load the data into products in the useEffect hook
-    const[ cyphers, setCyphers] =  useState([])
-
+    const[ cypher, setOneCypher] =  useState([])
     // useEffect( function, [] ) => function gets executed when component gets mounted
     useEffect( () => {
         console.log("Hello, this component was mounted!")
 
-        CypherApi.getCyphers(setCyphers)
+        CypherApi.getOneCypher(setOneCypher)
 
     }, [] )
 
-    const tableData = cyphers.map( p => 
-        <tr key={p.id}>
-            <td>{p.id}</td>
-            <td>{p.question}</td>
-            <td>{p.difficulty}</td>
-            <td><Link to={'/cyphers/'+ p.id}>
-                <button className='btn btn-danger'>
-                    Attempt
-                </button>
-                </Link>
-            </td>
+    
+
+
+    const tableData = (
+        <tr key={cypher.id}>
+            <td>{cypher.id}</td>
+            <td>{cypher.question}</td>
+            <td>{cypher.difficulty}</td>
         </tr> )
 
         return (
             <div>
     
-                <h2>Product List</h2>
+                <h2></h2>
     
                 <table className="table table-striped">
                     <thead>
@@ -60,4 +57,13 @@ const CyphersTable = () => {
         );
     };
 
-export default CyphersTable;
+
+
+export default CyphersSingle;
+
+
+
+
+
+
+
