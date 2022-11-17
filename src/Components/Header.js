@@ -24,9 +24,11 @@ const Header = () => {
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+
               <Link class="nav-link" to='/cyphers'>
                 Play Ciphers
               </Link>
+
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/cyphers:id">
