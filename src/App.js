@@ -7,10 +7,12 @@ import Home from './components/Home';
 import CyphersSingle from './components/CyphersSingle';
 import CyphersTable from './components/CyphersTable';
 import { useState } from 'react';
-import UserSignUp from './components/UserSignUp';
-import UserLogin from  './components/UserLogin';
+import UserSignUp from './Components/UserSignUp';
+import UserLogin from  './Components/UserLogin';
 import UserApi from './apis/UserApi';
+import History from './Components/History';
 import ProgressTable from './components/ProgressTable';
+
 
 function App() {
   const[id, setId] = useState(0)
@@ -30,7 +32,10 @@ function App() {
           <Route path = "/cyphers/:id" element={<CyphersSingle id={id} setId={setId}/>}/>
           <Route path = "/login" element={<UserLogin/>}/>
           <Route path = "/Register" element={<UserSignUp loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>  }/>
+          <Route path = "/History" element={<History/>}/>
+          <Route path = "/Progress" element={<progress/>}/>
           <Route path = "/Progress" element={<ProgressTable Id={id} setId={setId}/>}/>
+
 
         </Routes>
 

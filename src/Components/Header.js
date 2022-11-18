@@ -47,6 +47,11 @@ const Header = (props) => {
                 View Progress
               </Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/history">
+                History
+              </Link>
+            </li>
           </ul>
           {/* <span class="navbar-text">Navbar text with an inline element</span> */}
         </div>
