@@ -10,9 +10,11 @@ import { useState } from 'react';
 import UserSignUp from './components/UserSignUp';
 import UserLogin from  './components/UserLogin';
 import UserApi from './apis/UserApi';
+import ProgressTable from './components/ProgressTable';
 
 function App() {
   const[id, setId] = useState(0)
+  const[progId, setProgId] = useState(0)
   const[loggedIn, setLoggedIn] = useState()
   const[currUser,setCurrUser] = useState(UserApi.getUser())
   return (
@@ -28,7 +30,7 @@ function App() {
           <Route path = "/cyphers/:id" element={<CyphersSingle id={id} setId={setId}/>}/>
           <Route path = "/login" element={<UserLogin/>}/>
           <Route path = "/Register" element={<UserSignUp loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>  }/>
-          <Route path = "/Progress" element={<progress/>}/>
+          <Route path = "/Progress" element={<ProgressTable Id={id} setId={setId}/>}/>
 
         </Routes>
 
