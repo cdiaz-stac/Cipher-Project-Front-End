@@ -27,7 +27,6 @@ const CyphersTable = (props) => {
             <td>{p.question}</td>
             <td>{p.difficulty}</td>
             <td><Link to={'/cyphers/'+ p.id}>
-                {/* edit to also have capacity to addProgress via onclick="doSomething();doSomethingElse();*/}
                 <button onClick={()=>{props.setId(p.id)}} className='btn btn-danger'>
                     Attempt
                 </button>
