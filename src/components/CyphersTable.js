@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CypherApi from '../apis/CypherApi';
+import ProgressApi from '../apis/ProgressApi';
 import * as React from "react";
 import {
   BrowserRouter as Router,
@@ -18,6 +19,7 @@ const CyphersTable = (props) => {
         console.log("Hello, this component was mounted!")
 
         CypherApi.getCyphers(setCyphers)
+
 
     }, [] )
 

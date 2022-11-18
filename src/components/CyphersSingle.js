@@ -8,7 +8,7 @@ import {
   useParams,
 } from "react-router-dom";
 import CypherApi from '../apis/CypherApi';
-
+import ProgressApi from '../apis/ProgressApi';
 const CyphersSingle = (props) => {
 
     // hold empty array for the products that need to be loaded on the page,
@@ -17,9 +17,9 @@ const CyphersSingle = (props) => {
     // useEffect( function, [] ) => function gets executed when component gets mounted
     useEffect( () => {
         console.log("Hello, this component was mounted!")
-
+        
         CypherApi.getOneCypher(setOneCypher, props.id)
-
+        ProgressApi.addProgress(props.id)
     }, [] )
 
     
@@ -40,7 +40,7 @@ const CyphersSingle = (props) => {
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>#</th>
                             <th>Question</th>
                             <th>Difficulty</th>
                             <th></th>
