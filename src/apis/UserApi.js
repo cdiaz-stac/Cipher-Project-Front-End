@@ -13,8 +13,7 @@ const UserApi = {
       .then((data) => {
         console.log("USER CREATED:");
         console.log(data); // data -> product created
-        const {currentUsername} = data.username
-        localStorage.setItem("username",currentUsername)
+        localStorage.setItem('id',data.id)
       })
       .catch((error) => {
         console.log(error);
@@ -51,6 +50,9 @@ const UserApi = {
   getUser() {
     return localStorage.getItem('username');
   },
+  getId(){
+    return localStorage.getItem('id');
+  }
 };
 
 export default UserApi;
