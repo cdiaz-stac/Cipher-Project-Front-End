@@ -30,9 +30,9 @@ const CyphersSingle = (props) => {
         //take the product generated and find the id
         // set the id for the alert
         if(cypher.answer.equals(answer)){
-            ProgressApi.getCompleted(localStorage.getItem('progId'))
             setShowAlert(true);
         }
+        <Link to= {"/cypher/" + props.id}></Link>
         console.log("reached")
 
         event.preventDefault();
