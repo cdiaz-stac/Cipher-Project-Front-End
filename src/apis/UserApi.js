@@ -1,7 +1,7 @@
 const URI = "http://localhost:8080/api/";
 
 const UserApi = {
-  createUser: (user, setUserName, setUserPassword) => {
+  createUser: (user) => {
     //would need to set up tokens in the headers for this to work
     fetch(URI + "user/signup", {
       //request itself
@@ -13,15 +13,15 @@ const UserApi = {
       .then((data) => {
         console.log("USER CREATED:");
         console.log(data); // data -> product created
-
+        const {currentUsername} = data.username
+        localStorage.setItem("username",currentUsername)
       })
       .catch((error) => {
         console.log(error);
       });
   },
-  authUser: (user, authUser, authPassword) => {
+  authUser: (user) => {
     // pass bearerToken in every authentication required api call "BearerToken" 'Authorization': `Bearer ${bearerToken}`
-    const bearerToken = this.getToken();
 
     fetch(URI + "authenticate", {
       //request itself
@@ -33,12 +33,13 @@ const UserApi = {
 
       body: JSON.stringify(user),
     })
-      .then((response) => response.json())
+      .then((result) => result.json())
       .then((data) => {
         console.log("JWT CREATED:");
         console.log(data); // data -> jwt created
-        const {token} = data.jwt
-        localStorage.setItem('token', token);
+        localStorage.setItem('token', data.jwt);
+        localStorage.setItem('username',user.username)
+        console.log(UserApi.getUser())
       })
       .catch((error) => {
         console.log(error);
@@ -47,4 +48,9 @@ const UserApi = {
   getToken() {
     return localStorage.getItem('token');
   },
+  getUser() {
+    return localStorage.getItem('username');
+  },
 };
+
+export default UserApi;
