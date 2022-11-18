@@ -1,19 +1,20 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import Home from './Components/Home';
-import CyphersSingle from './Components/CyphersSingle';
-import CyphersTable from './Components/CyphersTable';
-import Register from './Components/Register';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
+import CyphersSingle from './components/CyphersSingle';
+import CyphersTable from './components/CyphersTable';
 import { useState } from 'react';
 import UserSignUp from './components/UserSignUp';
 import UserLogin from  './components/UserLogin';
 import UserApi from './apis/UserApi';
+import ProgressTable from './components/ProgressTable';
 
 function App() {
   const[id, setId] = useState(0)
+  const[progId, setProgId] = useState(0)
   const[loggedIn, setLoggedIn] = useState()
   const[currUser,setCurrUser] = useState(UserApi.getUser())
   return (
@@ -27,11 +28,9 @@ function App() {
           <Route path="/" element={ <Home/> } exact />
           <Route path ="/cyphers" element={<CyphersTable id={id} setId={setId}/>} exact />
           <Route path = "/cyphers/:id" element={<CyphersSingle id={id} setId={setId}/>}/>
-
           <Route path = "/login" element={<UserLogin/>}/>
           <Route path = "/Register" element={<UserSignUp loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>  }/>
-
-          <Route path = "/Progress" element={<progress/>}/>
+          <Route path = "/Progress" element={<ProgressTable Id={id} setId={setId}/>}/>
 
         </Routes>
 
