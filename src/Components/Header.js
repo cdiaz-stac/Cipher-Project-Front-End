@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import UserApi from "../apis/UserApi";
 
-const Header = () => {
+const Header = (props) => {
+
   return (
     <header>
-      <h1 className="display-2">Ciphers Website</h1>
+      <h1 className="display-2">Ciphers Website<p style={{textAlign:'right',fontSize:26}}>{props.currUser}</p></h1>
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">
@@ -31,7 +33,7 @@ const Header = () => {
 
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/cyphers:id">
+              <Link class="nav-link" to="/login">
                 Login
               </Link>
             </li>
