@@ -8,9 +8,10 @@ import CyphersSingle from './Components/CyphersSingle';
 import CyphersTable from './Components/CyphersTable';
 import Register from './Components/Register';
 import { useState } from 'react';
-import UserSignUp from './components/UserSignUp';
-import UserLogin from  './components/UserLogin';
+import UserSignUp from './Components/UserSignUp';
+import UserLogin from  './Components/UserLogin';
 import UserApi from './apis/UserApi';
+import History from './Components/History';
 
 function App() {
   const[id, setId] = useState(0)
@@ -30,7 +31,7 @@ function App() {
 
           <Route path = "/login" element={<UserLogin/>}/>
           <Route path = "/Register" element={<UserSignUp loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>  }/>
-
+          <Route path = "/History" element={<History/>}/>
           <Route path = "/Progress" element={<progress/>}/>
 
         </Routes>
